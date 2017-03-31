@@ -8,6 +8,7 @@ class Queue
   end
 
   def dequeue
+    @queue.shift
   end
 
   def show
@@ -23,4 +24,13 @@ q.enqueue(8)
 p q
 
 q.enqueue(9)
+p q
+
+q.dequeue
+p q
+
+q.dequeue
+p q
+
+q.enqueue(0)
 p q
