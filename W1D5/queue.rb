@@ -12,25 +12,26 @@ class Queue
   end
 
   def show
+    p @queue.dup
   end
 end
 
 q = Queue.new
 
 q.enqueue(7)
-p q
+q.show
 
 q.enqueue(8)
-p q
+q.show
 
 q.enqueue(9)
-p q
+q.show
 
 q.dequeue
-p q
+q.show
 
 q.dequeue
-p q
+q.show
 
 q.enqueue(0)
-p q
+q.show
