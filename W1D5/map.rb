@@ -4,10 +4,8 @@ class Map
   end
 
   def assign(key, value)
-    keys = get_keys
-
-    if keys.include?(key)
-      key_index = keys.index(key)
+    if key?(key)
+      key_index = get_keys.index(key)
       @map[key_index][1] = value
     else
       @map << [key, value]
@@ -15,10 +13,18 @@ class Map
   end
 
   def lookup(key)
-    keys = get_keys
-    if keys.include?(key)
-      key_index = keys.index(key)
+    if key?(key)
+      key_index = get_keys.index(key)
       @map[key_index][1]
+    else
+      nil
+    end
+  end
+
+  def remove(key)
+    if key?(key)
+      key_index = get_keys.index(key)
+      @map.delete_at(key_index)
     else
       nil
     end
@@ -39,6 +45,11 @@ class Map
 
     keys
   end
+
+  def key?(key)
+    keys = get_keys
+    keys.include?(key)
+  end
 end
 
 m = Map.new
@@ -55,3 +66,6 @@ m.show
 
 p m.lookup(1)
 p m.lookup("hello")
+
+m.remove(2)
+m.show
