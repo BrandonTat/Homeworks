@@ -4,12 +4,21 @@ class Map
   end
 
   def assign(key, value)
-    @map << [key, value]
+    keys = get_keys
+
+    if keys.include?(key)
+      key_index = keys.index(key)
+      @map[key_index][1] = value
+    else
+      @map << [key, value]
+    end
   end
 
   def show
     p @map
   end
+
+  private
 
   def get_keys
     keys = []
@@ -31,4 +40,5 @@ m.show
 m.assign(2, 10)
 m.show
 
-p m.get_keys
+m.assign(1, 0)
+m.show
