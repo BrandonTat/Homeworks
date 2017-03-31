@@ -14,6 +14,16 @@ class Map
     end
   end
 
+  def lookup(key)
+    keys = get_keys
+    if keys.include?(key)
+      key_index = keys.index(key)
+      @map[key_index][1]
+    else
+      nil
+    end
+  end
+
   def show
     p @map
   end
@@ -42,3 +52,6 @@ m.show
 
 m.assign(1, 0)
 m.show
+
+p m.lookup(1)
+p m.lookup("hello")
