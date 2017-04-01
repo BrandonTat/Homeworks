@@ -34,7 +34,7 @@ class Simon
   end
 
   def game_over_message
-
+    puts "Game over! You made it #{ @sequence_length - 1 } rounds!"
   end
 
   def reset_game
