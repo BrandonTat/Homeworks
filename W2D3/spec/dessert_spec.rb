@@ -7,7 +7,7 @@ Instructions: implement all of the pending specs (the `it` statements without bl
 
 describe Dessert do
   subject(:cupcake) { Dessert.new("cupcake", 3, chef) }
-  let(:chef) { double("chef") }
+  let(:chef) { double("chef", name: "Gordon Ramsay") }
 
   describe "#initialize" do
     it "sets a type" do
@@ -54,7 +54,10 @@ describe Dessert do
   end
 
   describe "#serve" do
-    it "contains the titleized version of the chef's name"
+    it "contains the titleized version of the chef's name" do
+      allow(chef).to receive(:titleize).and_return("Chef Gordon Ramsay the Great Baker")
+    end
+
   end
 
   describe "#make_more" do
