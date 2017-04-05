@@ -43,9 +43,14 @@ describe Dessert do
   end
 
   describe "#eat" do
-    it "subtracts an amount from the quantity"
+    it "subtracts an amount from the quantity" do
+      cupcake.eat(1)
+      expect(cupcake.quantity).to eql(2)
+    end
 
-    it "raises an error if the amount is greater than the quantity"
+    it "raises an error if the amount is greater than the quantity" do
+      expect { cupcake.eat(40) }.to raise_error("not enough left!")
+    end
   end
 
   describe "#serve" do
