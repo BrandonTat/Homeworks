@@ -35,7 +35,11 @@ describe Dessert do
   end
 
   describe "#mix!" do
-    it "shuffles the ingredient array"
+    it "shuffles the ingredient array" do
+      cupcake.add_ingredient("frosting")
+      cupcake.add_ingredient("sugar")
+      expect(cupcake.ingredients).not_to eql(["sprinkles", "frosting", "sugar"])
+    end
   end
 
   describe "#eat" do
