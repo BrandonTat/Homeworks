@@ -18,7 +18,40 @@ def quadratic_octopus(array)
   longest_fish
 end
 
-def linearithmic_octopus
+
+class Array
+  def merge_sort(&prc)
+    return self if size <= 1
+
+    mid = length / 2
+    left = self.take(mid).merge_sort(&prc)
+    right = self.drop(mid).merge_sort(&prc)
+
+    Array.merge(left, right, &prc)
+  end
+
+  private
+
+  def self.merge(left, right, &prc)
+    merged = []
+
+    until left.empty? || right.empty?
+      if prc.call(left, right) < 1
+        merged << left.shift
+      else
+        merged << right.shift
+      end
+    end
+
+    merged.concat(left).concat(right)
+  end
+
+end
+
+
+def linearithmic_octopus(array)
+  prc = proc { |x, y| x.length <=> y.length }
+  array.merge_sort(&prc).last
 end
 
 def linear_octopus(array)
@@ -32,4 +65,4 @@ def linear_octopus(array)
   longest_fish
 end
 
-p linear_octopus(fish)
+p linearithmic_octopus(fish)
