@@ -20,8 +20,8 @@ def fast_dance(direction, hash)
 end
 
 # Testing slow dance
-# p slow_dance("up", tiles_array)
-# p slow_dance("right-down", tiles_array)
+p slow_dance("up", tiles_array)
+p slow_dance("right-down", tiles_array)
 
 # Testing fast dance
 p fast_dance("up", tiles_hash)
