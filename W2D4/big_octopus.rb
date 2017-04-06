@@ -18,7 +18,6 @@ def quadratic_octopus(array)
   longest_fish
 end
 
-
 class Array
   def merge_sort(&prc)
     return self if size <= 1
@@ -48,7 +47,6 @@ class Array
 
 end
 
-
 def linearithmic_octopus(array)
   prc = proc { |x, y| x.length <=> y.length }
   array.merge_sort(&prc).last
@@ -64,5 +62,3 @@ def linear_octopus(array)
 
   longest_fish
 end
-
-p linearithmic_octopus(fish)
