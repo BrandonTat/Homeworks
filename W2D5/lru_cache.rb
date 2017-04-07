@@ -11,7 +11,7 @@ class LRUCache
   def add(el)
     if @cache.include?(el)
       @cache.delete(el)
-      @cache << element
+      @cache << el
     elsif count >= @size
       @cache.shift
       @cache << el
@@ -21,10 +21,27 @@ class LRUCache
   end
 
   def show
-   # shows the items in the cache, with the LRU item first
+    p @cache
   end
-
-  private
- # helper methods go here!
-
 end
+
+# # Tests
+# p johnny_cache = LRUCache.new(4)
+#
+# p johnny_cache.add("I walk the line")
+# p johnny_cache.add(5)
+#
+# p johnny_cache.count # => returns 2
+#
+# p johnny_cache.add([1,2,3])
+# p johnny_cache.add(5)
+# p johnny_cache.add(-5)
+# p johnny_cache.add({a: 1, b: 2, c: 3})
+# p johnny_cache.add([1,2,3,4])
+# p johnny_cache.add("I walk the line")
+# p johnny_cache.add(:ring_of_fire)
+# p johnny_cache.add("I walk the line")
+# p johnny_cache.add({a: 1, b: 2, c: 3})
+#
+#
+# p johnny_cache.show
