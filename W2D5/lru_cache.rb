@@ -5,7 +5,7 @@ class LRUCache
   end
 
   def count
-   # returns number of elements currently in cache
+    @cache.count
   end
 
   def add(el)
