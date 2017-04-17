@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   end
 
   def new
-    # your code here
+    render :new
   end
 
   def create
