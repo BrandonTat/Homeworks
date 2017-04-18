@@ -14,6 +14,7 @@
           <li><a href="#description">Description</a></li>
           <li><a href="#ingredients">Ingredients</a></li>
           <li><a href="#directions">Directions</a></li>
+          <li><a href="#reviews">Reviews</a></li>
         </ul>
       </nav>
     </header>
@@ -75,8 +76,53 @@
       </ol>
     </section>
 
+    <section>
+      <h2 id="reviews">Reviews</h2>
+
+      <form action="/reviews" method="post">
+        <label for="name"> Name </label>
+        <input id="name" type="text" name="name">
+
+        <br>
+
+        <label for="rating"> Rating </label>
+        <input type="radio" name="rating" value="1" checked > 1
+        <input type="radio" name="rating" value="2" > 2
+        <input type="radio" name="rating" value="3" > 3
+        <input type="radio" name="rating" value="4" > 4
+        <input type="radio" name="rating" value="5" > 5
+
+        <br>
+
+        <label for="Cooking Expertise"> Cooking Expertise </label>
+        <select id="Cooking Expertise" name="Cooking Expertise">
+
+          <option value = "--Select Cooking Expertise--"
+            disabled="true" selected="true "
+            >--Select Cooking Expertise--</option>
+
+          <option value="Sometimes Cook"> Sometimes Cook </option>
+          <option value="Cook Everyday"> Cook Everyday </option>
+          <option value="Cooking is a Hobby"> Cooking is a Hobby </option>
+          <option value="Professional Chef"> Professional Chef </option>
+        </select>
+
+        <br> <br>
+
+        <label> Review
+          <textarea name="Review" cols="30" rows="10"> </textarea>
+        </label>
+
+        <input type="Submit" value="Submit Review">
+      </form>
+
+    </section>
+
+    <br>
+
     <footer>
       <a href="http://www.foodnetwork.com/recipes/fully-loaded-bacon-wrapped-hot-dogs-recipe">Taken from</a>
+
     </footer>
   </body>
 </html>
